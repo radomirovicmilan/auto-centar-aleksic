@@ -1,0 +1,21 @@
+@use "../abstracts/colors.modules.scss";
+
+.navbar-wrapper {
+  background-color: colors.$primaryColorNavbar;
+  width: 100vw;
+  height: 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-buttons-wrapper {
+  margin: 0 21px;
+
+  display: flex;
+}
+
+.logo-navbar {
+  max-height: 100%;
+  margin: 0 33px;
+}
