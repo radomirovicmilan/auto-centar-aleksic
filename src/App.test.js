@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, configure } from 'enzyme';
 import App from './App';
+import NavBar from './components/NavBar';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+configure({ adapter: new Adapter() })
+
+describe('App', () => {
+  it('is truthy', () => {
+    expect(App).toBeTruthy();
+  });
+  it('renders with navigation bar', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.containsMatchingElement(<NavBar />)).toEqual(true);
+  });
 });
